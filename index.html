@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sterilisation Room Hazards</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2F2F2;
+            color: #333;
+        }
+
+        /* Brand Colors */
+        .brand-deep-purple { background-color: #532A8C; }
+        .text-brand-deep-purple { color: #532A8C; }
+        .border-brand-light-purple { border-color: #C3ACE8; }
+        .bg-brand-medium-purple { background-color: #9D8ABB; }
+        .text-brand-bright-green { color: #7ABF49; }
+        .brand-off-white { background-color: #F2F2F2; }
+
+        .accordion-button {
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            padding: 1.25rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-bottom: 1px solid #eee;
+            outline: none;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .accordion-button:hover, .accordion-button.active {
+            background-color: #f7f5fa; /* A very light purple */
+        }
+        
+        .accordion-button.active {
+            color: #532A8C;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: white;
+            padding: 0 1.25rem;
+        }
+        
+        .content-inner {
+             padding: 1.25rem 0;
+             border-top: 2px solid #7ABF49;
+        }
+        
+        .control-list {
+            padding-left: 1.25rem;
+        }
+        
+        .control-list li::before {
+            content: '✓';
+            color: #7ABF49; /* brand-bright-green */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 md:p-8">
+
+    <div class="w-full max-w-4xl brand-off-white rounded-xl shadow-lg overflow-hidden border-2 border-brand-light-purple">
+        
+        <!-- Header -->
+        <header class="brand-deep-purple text-white p-6 rounded-t-lg">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-2">Common Hazards in the Sterilisation Room</h1>
+            <p class="text-center text-lg opacity-90">Click on each hazard to reveal the risks and controls.</p>
+        </header>
+
+        <!-- Accordion Section -->
+        <div id="accordion-container" class="w-full">
+            <!-- Accordion Item 1 -->
+            <div>
+                <button class="accordion-button">
+                    <span><span class="text-brand-bright-green mr-2">1.</span>Sharps Injuries</span>
+                    <svg class="accordion-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <h3 class="font-semibold text-lg mb-2">Risk:</h3>
+                        <p class="mb-4">Puncture wounds from contaminated instruments during transport, cleaning, and packaging.</p>
+                        <h3 class="font-semibold text-lg mb-2">Controls:</h3>
+                        <ul class="control-list list-inside space-y-2">
+                            <li>Use puncture-proof transport containers.</li>
+                            <li>Wear heavy-duty utility gloves for all instrument handling.</li>
+                            <li>Use long-handled brushes for manual cleaning.</li>
+                            <li>Never reach into sinks or ultrasonic cleaners blindly.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Accordion Item 2 -->
+            <div>
+                <button class="accordion-button">
+                    <span><span class="text-brand-bright-green mr-2">2.</span>Chemical Exposure</span>
+                     <svg class="accordion-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <h3 class="font-semibold text-lg mb-2">Risk:</h3>
+                        <p class="mb-4">Skin/eye irritation or respiratory issues from disinfectants, instrument detergents, and sterilants.</p>
+                        <h3 class="font-semibold text-lg mb-2">Controls:</h3>
+                        <ul class="control-list list-inside space-y-2">
+                            <li>Wear appropriate PPE (utility gloves, masks, protective eyewear/face shield).</li>
+                            <li>Ensure adequate ventilation in the sterilisation area.</li>
+                            <li>Follow manufacturer's instructions for dilution and use.</li>
+                            <li>Know the location of and how to use the Safety Data Sheet (SDS).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Accordion Item 3 -->
+            <div>
+                <button class="accordion-button">
+                    <span><span class="text-brand-bright-green mr-2">3.</span>Heat & Steam Burns</span>
+                     <svg class="accordion-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <h3 class="font-semibold text-lg mb-2">Risk:</h3>
+                        <p class="mb-4">Burns from hot instruments, chamber walls, or escaping steam when opening the autoclave.</p>
+                        <h3 class="font-semibold text-lg mb-2">Controls:</h3>
+                        <ul class="control-list list-inside space-y-2">
+                            <li>Stand to the side of the door, not in front of it, when opening.</li>
+                            <li>Open the autoclave door slightly to allow steam to vent before fully opening.</li>
+                            <li>Allow instrument packs to cool completely before handling.</li>
+                            <li>Use heat-resistant gloves if you must handle hot cassettes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <!-- Accordion Item 4 -->
+            <div>
+                <button class="accordion-button">
+                    <span><span class="text-brand-bright-green mr-2">4.</span>Ergonomic Strain</span>
+                     <svg class="accordion-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <h3 class="font-semibold text-lg mb-2">Risk:</h3>
+                        <p class="mb-4">Musculoskeletal injuries from repetitive motions, handling heavy cassettes, and awkward postures.</p>
+                        <h3 class="font-semibold text-lg mb-2">Controls:</h3>
+                        <ul class="control-list list-inside space-y-2">
+                            <li>Organise workflow into a logical flow to minimise twisting and reaching.</li>
+                            <li>Use height-adjustable stools and benches where possible.</li>
+                            <li>Take regular micro-breaks to stretch and change position.</li>
+                            <li>Lift heavy instrument cassettes with your legs, not your back.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <!-- Accordion Item 5 -->
+            <div>
+                <button class="accordion-button">
+                    <span><span class="text-brand-bright-green mr-2">5.</span>Slips, Trips & Falls</span>
+                     <svg class="accordion-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <h3 class="font-semibold text-lg mb-2">Risk:</h3>
+                        <p class="mb-4">Falling on wet floors from splashes during instrument cleaning or from spills.</p>
+                        <h3 class="font-semibold text-lg mb-2">Controls:</h3>
+                        <ul class="control-list list-inside space-y-2">
+                            <li>Clean up all spills immediately.</li>
+                            <li>Ensure the area has non-slip flooring.</li>
+                            <li>Wear appropriate closed-toe, non-slip footwear.</li>
+                            <li>Keep walkways clear of clutter and obstacles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+
+                    // Close other open accordions
+                    accordionButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.classList.remove('active');
+                            otherButton.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+
+                    // Toggle the clicked accordion
+                    button.classList.toggle('active');
+                    if (button.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
